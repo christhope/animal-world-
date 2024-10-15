@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Información sobre Animales</title>
+</head>
+<body>
+    <header>
+        <h1>Información sobre el Animal</h1>
+    </header>
+    <main id="animal-info">
+        <!-- La información del animal aparecerá aquí -->
+    </main>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const animalName = params.get('name');
+
+        // Aquí puedes agregar información sobre los animales
+        const animalDetails = {
+            "Perro": "Los perros son animales domesticados, conocidos por su lealtad y amistad con los humanos.",
+            "Gato": "Los gatos son mascotas populares, famosos por su independencia y habilidades de caza.",
+            "Elefante": "Los elefantes son los animales terrestres más grandes y son conocidos por su inteligencia.",
+            "León": "Los leones son conocidos como los 'reyes de la selva' y viven en manadas.",
+            "Tigre": "Los tigres son los felinos más grandes y son conocidos por sus rayas distintivas."
+        };
+
+        document.getElementById("animal-info").innerHTML = `
+            <h2>${animalName}</h2>
+            <p>${animalDetails[animalName] || "Información no disponible."}</p>
+            <a href="index.html">Regresar a la búsqueda</a>
+        `;
+    </script>
+</body>
+</html>
